@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشغل الأفلام من USB - شاهد أفلامك المفضلة</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-usb"></i>
+                    <span>مشغل الأفلام</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#library">المكتبة</a></li>
+                    <li><a href="#features">الميزات</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">شاهد أفلامك المفضلة مباشرة من USB</h1>
+                <p class="hero-subtitle">تجربة مشاهدة متميزة وسهلة لجميع أفلامك المحفوظة على أجهزة USB</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="connectUSB">
+                        <i class="fas fa-usb"></i>
+                        اتصل بـ USB
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        شاهد العرض التوضيحي
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">الميزات الرئيسية</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-usb"></i>
+                    </div>
+                    <h3>اتصال سهل بـ USB</h3>
+                    <p>اكتشاف تلقائي لأجهزة USB وعرض محتوياتها بطريقة منظمة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h3>تشغيل عالي الجودة</h3>
+                    <p>دعم جميع صيغ الفيديو الشائعة مع جودة تشغيل ممتازة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>متوافق مع جميع الأجهزة</h3>
+                    <p>يعمل على أجهزة الكمبيوتر والهواتف المحمولة والأجهزة اللوحية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>بحث متقدم</h3>
+                    <p>ابحث عن أفلامك بسهولة مع فلاتر متقدمة وتصنيفات ذكية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Library Section -->
+    <section id="library" class="library">
+        <div class="container">
+            <h2 class="section-title">مكتبة الأفلام</h2>
+            <div class="library-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="ابحث عن فيلم...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">الكل</button>
+                    <button class="filter-btn">أكشن</button>
+                    <button class="filter-btn">دراما</button>
+                    <button class="filter-btn">كوميديا</button>
+                    <button class="filter-btn">رعب</button>
+                </div>
+            </div>
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Movies will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    <source src="" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+            <div class="video-info">
+                <h3 id="videoTitle">عنوان الفيلم</h3>
+                <p id="videoDescription">وصف الفيلم</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- USB Status -->
+    <div id="usbStatus" class="usb-status">
+        <div class="status-content">
+            <i class="fas fa-usb"></i>
+            <span id="statusText">لا يوجد جهاز USB متصل</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>مشغل الأفلام من USB</h3>
+                    <p>تجربة مشاهدة متميزة لجميع أفلامك المحفوظة على أجهزة USB</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#library">المكتبة</a></li>
+                        <li><a href="#features">الميزات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 مشغل الأفلام من USB. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
